@@ -16,6 +16,7 @@ public class Loops {
     fibonacciSeq(10);
     fibonacciSeqSum(10);
 
+    digits();
 
   }
 
@@ -70,13 +71,13 @@ public class Loops {
   }
 
   public static void numOfnTimes(int num) {
-    for (int i = 1; i <= num; i++) {
+    for (int i = 1; i < num; i++) {
       System.out.println(i);
     }
   }
 
   public static void printEven(int num) {
-    for (int i = 1; i <= num; i++) {
+    for (int i = 1; i < num; i++) {
       if (i % 2 == 0) {
         System.out.println(i);
       } else {
@@ -89,7 +90,7 @@ public class Loops {
   public static int printSum1through10() {
     int fin = 0;
 
-    for (int i = 1; i <=10; i++) {
+    for (int i = 1; i <10; i++) {
       fin += i;
     }
 
@@ -100,7 +101,7 @@ public class Loops {
   public static int printSum1throughn(int n) {
     int fin = 0;
 
-    for(int i = 1; i <= n; i++) {
+    for(int i = 1; i < n; i++) {
       fin += i;
     }
 
@@ -120,7 +121,7 @@ public class Loops {
       next = sum;
       sum = first + next;
 
-      
+
       System.out.println(sum);
     }
 
@@ -143,6 +144,27 @@ public class Loops {
   }
 
 
+  public static void digits()
+  {
+    for(int i = 10; i < 10000; i++)
+    {
+      int n = 0;
+      String add = "";
+      String num = String.valueOf(i);
 
+      for(int j = 0; j < num.length(); j++) {
+        n +=  Character.getNumericValue(num.charAt(j));
 
+        if (j == num.length()-1) {
+          add += num.charAt(j) + " = ";
+        } else
+        {
+          add += (num.charAt(j) + " + ");
+        }
+      }
+
+      System.out.println(i + ", " + add + n);
+
+    }
+  }
 }
