@@ -123,7 +123,7 @@ public class UsingAPIs
     cardParams.put("address_state", "CA");
     cardParams.put("address_country", "USA");
 
-    
+
 
 
 
@@ -133,7 +133,8 @@ public class UsingAPIs
     chargeParams.put("card", cardParams);
     chargeParams.put("description", "Creating my first Stripe charge!");
 
-    final Charge charge = Charge.create(chargeParams);
+
+    Charge charge = Charge.create(chargeParams);
 
     System.out.println(charge);
 
